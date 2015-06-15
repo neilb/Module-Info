@@ -1,5 +1,8 @@
 Revision history for perl module Module::Info
 
+0.35_02 2015-06-15 NEILB
+    - Sigh, forgot to add B::Utils to PREREQ_PM
+
 0.35_01 2015-06-15 NEILB
     - Dropped B::BUtils in favour of using the standard B::Utils.
       subroutines_called() stopped working correctly for standard function

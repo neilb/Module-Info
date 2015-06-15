@@ -1,6 +1,6 @@
 package B::Module::Info;
 
-our $VERSION = '0.35_01';
+our $VERSION = '0.35_02';
 
 use B;
 use B::Utils 0.26 qw(walkoptree_filtered walkoptree_simple
