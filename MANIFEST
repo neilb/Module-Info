@@ -5,7 +5,6 @@ META.yml
 Makefile.PL
 bin/module_info
 bin/pfunc
-lib/B/BUtils.pm
 lib/B/Module/Info.pm
 lib/Module/Info.pm
 t/Module-Info.t

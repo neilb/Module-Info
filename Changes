@@ -1,5 +1,10 @@
 Revision history for perl module Module::Info
 
+0.35_01 2015-06-15 NEILB
+    - Dropped B::BUtils in favour of using the standard B::Utils.
+      subroutines_called() stopped working correctly for standard function
+      calls, identifying them as calls via symbolic references. Fixed that.
+
 0.35 2013-09-08 14:10:31 CEST
     - Handle 'package NAME VERSION' syntax (patch by Norbert Gruener)
     - Added repository and license info to metadata

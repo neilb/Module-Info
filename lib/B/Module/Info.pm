@@ -1,10 +1,10 @@
 package B::Module::Info;
 
-$VERSION = '0.24';
+our $VERSION = '0.35_01';
 
 use B;
-use B::BUtils qw(walkoptree_filtered walkoptree_simple
-                 opgrep all_roots);
+use B::Utils 0.26 qw(walkoptree_filtered walkoptree_simple
+                     opgrep all_roots);
 @B::Utils::bad_stashes = qw();  # give us everything.
 
 =head1 NAME
@@ -401,15 +401,19 @@ sub sub_check {
     }
     # function call
     else {
-        my($name_op) = grep($_->name eq 'gv', @kids);
-        if( $name_op ) {
-            my $gv = gv_or_padgv($name_op);
+        my $gv_op;
+        my ($filename, $line) = ($B::Utils::file, $B::Utils::line);
+        walkoptree_simple($op,
+            sub { my $op = shift; $gv_op = $op if $op->name eq 'gv'; }
+        );
+        if ($gv_op) {
+            my $gv = gv_or_padgv($gv_op);
             printf "function call to %s at \"%s\" line %d\n", 
-              $gv->NAME, $B::Utils::file, $B::Utils::line;
+              $gv->NAME, $filename, $line;
         }
         else {
             printf "function call using symbolic ref at \"%s\" line %d\n",
-              $B::Utils::file, $B::Utils::line;
+              $filename, $line;
         }
     }
 }

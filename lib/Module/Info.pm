@@ -4,13 +4,11 @@ use strict;
 use Carp;
 use File::Spec;
 use Config;
-require 5.004;
 
 my $has_version_pm = eval 'use version; 1';
 
 use vars qw($VERSION @ISA $AUTOLOAD);
-# quotes 'version' for 5.004
-$VERSION = eval 'use version; 1' ? 'version'->new('0.35') : '0.35';
+$VERSION = eval 'use version; 1' ? 'version'->new('0.35_01') : '0.35_01';
 $VERSION = eval $VERSION;
 
 
