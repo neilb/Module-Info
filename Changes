@@ -1,5 +1,12 @@
 Revision history for perl module Module::Info
 
+0.35_03 2015-10-05 NEILB
+    - Removed File::Spec from t/lib/
+    - Set min required version of B::Utils to 0.27, as that release fixes
+      the remaining failing tests.
+    - Hacked const_sv() to cope with the change in OP_METHOD_NAMED
+      that happened at 5.21.5 (or possibly an earlier 5.21.*).
+
 0.35_02 2015-06-15 NEILB
     - Sigh, forgot to add B::Utils to PREREQ_PM
 

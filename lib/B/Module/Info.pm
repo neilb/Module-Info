@@ -1,9 +1,9 @@
 package B::Module::Info;
 
-our $VERSION = '0.35_02';
+our $VERSION = '0.35_03';
 
 use B;
-use B::Utils 0.26 qw(walkoptree_filtered walkoptree_simple
+use B::Utils 0.27 qw(walkoptree_filtered walkoptree_simple
                      opgrep all_roots);
 @B::Utils::bad_stashes = qw();  # give us everything.
 
@@ -185,7 +185,14 @@ my %modes = (
 
 sub const_sv {
     my $op = shift;
-    my $sv = $op->sv if $op->can('sv');
+    my $sv;
+    
+    if ($op->can('meth_sv')) {
+        $sv = $op->meth_sv;
+    }
+    elsif ($op->can('sv')) {
+        $sv = $op->sv;
+    }
     # the constant could be in the pad (under useithreads)
     $sv = padval($op->targ) unless $$sv;
     return $sv;
