@@ -36,7 +36,7 @@ WriteMakefile(
     PREREQ_PM       => {
         'File::Spec' => 0.8,
         'B'          => 0,
-        'B::Utils'   => 0.26,
+        'B::Utils'   => 0.27,
         'strict'     => 0,
         'Carp'       => 0,
     },

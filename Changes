@@ -1,6 +1,10 @@
 Revision history for perl module Module::Info
 
-0.35_03 2015-10-05 NEILB
+0.35_04 2015-10-14 NEILB
+    - Sigh, forgot to update the min version of B::Utils in Makefile.PL
+      Thanks to SREZIC for letting me know.
+
+0.35_03 2015-10-13 NEILB
     - Removed File::Spec from t/lib/
     - Set min required version of B::Utils to 0.27, as that release fixes
       the remaining failing tests.
