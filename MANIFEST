@@ -1,6 +1,5 @@
 Changes
 MANIFEST
-META.yml
 Makefile.PL
 bin/module_info
 bin/pfunc
@@ -22,4 +21,3 @@ t/n2_safe.t
 t/n3_version.t
 t/zy_pod_coverage.t
 t/zz_pod.t
-META.json

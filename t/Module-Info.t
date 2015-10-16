@@ -6,11 +6,11 @@ use Config;
 
 my $has_version_pm = eval 'use version; 1';
 my $version_pm_VERSION = $has_version_pm ? 'version'->VERSION : 0;
-my $Mod_Info_VERSION = '0.35_04';
+my $Mod_Info_VERSION = '0.35_05';
 # 0.280 vith version.pm, 0.28 without, except for development versions
-my $Mod_Info_Pack_VERSION = !$has_version_pm             ? '0.3504' :   # 0.3101
-         $has_version_pm && $version_pm_VERSION > '0.72' ? '0.3504' :   # 0.3101
-                                                           '0.350004';  # 0.310001
+my $Mod_Info_Pack_VERSION = !$has_version_pm             ? '0.3505' :   # 0.3101
+         $has_version_pm && $version_pm_VERSION > '0.72' ? '0.3505' :   # 0.3101
+                                                           '0.350005';  # 0.310001
 
 my @old5lib = defined $ENV{PERL5LIB} ? ($ENV{PERL5LIB}) : ();
 $ENV{PERL5LIB} = join $Config{path_sep}, 'blib/lib', @old5lib;
@@ -299,6 +299,7 @@ SKIP: {
 
     $module = Module::Info->new_from_file('t/lib/Bar.pm');
     @mods   = $module->modules_used;
+    @mods   = grep { $_ ne 'Win32' } @mods if $^O eq 'MSWin32';
     is( @mods, 3, 'modules_used with complex BEGIN block' );
     is_deeply( [sort @mods],
                [sort qw(Cwd Carp strict)] );

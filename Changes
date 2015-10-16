@@ -1,5 +1,14 @@
 Revision history for perl module Module::Info
 
+0.35_05 2015-10-16 NEILB
+    - Had a single failure reported by CPAN Testers for Perl 5.22/Windows.
+      On Windows, if you "use Cwd" and then call cwd(), then it does an
+      implicit "use Win32". On recent perls (sometime after 5.20.1) this
+      seems to get built into the op tree in a way that looks like the
+      scope doing the cwd() use'd Win32. There are several magic functions
+      in Cwd.pm which will probably trigger this behaviour. I'll see how this
+      change tests out, and possibly just document it for a non dev release.
+
 0.35_04 2015-10-14 NEILB
     - Sigh, forgot to update the min version of B::Utils in Makefile.PL
       Thanks to SREZIC for letting me know.

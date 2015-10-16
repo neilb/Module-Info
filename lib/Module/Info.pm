@@ -9,7 +9,7 @@ use Config;
 my $has_version_pm = eval 'use version; 1';
 
 use vars qw($VERSION @ISA $AUTOLOAD);
-$VERSION = eval 'use version; 1' ? 'version'->new('0.35_04') : '0.35_04';
+$VERSION = eval 'use version; 1' ? 'version'->new('0.35_05') : '0.35_05';
 $VERSION = eval $VERSION;
 
 

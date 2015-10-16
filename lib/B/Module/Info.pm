@@ -1,6 +1,6 @@
 package B::Module::Info;
 
-our $VERSION = '0.35_04';
+our $VERSION = '0.35_05';
 
 use B;
 use B::Utils 0.27 qw(walkoptree_filtered walkoptree_simple
@@ -187,7 +187,7 @@ sub const_sv {
     my $op = shift;
     my $sv;
     
-    if ($op->can('meth_sv')) {
+    if ($op->name eq 'method_named' && $op->can('meth_sv')) {
         $sv = $op->meth_sv;
     }
     elsif ($op->can('sv')) {
