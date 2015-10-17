@@ -95,7 +95,7 @@ SKIP: {
 
     my @mods = $mod_info->modules_used;
     my @expected = qw(strict File::Spec Config
-                      Carp IPC::Open3 vars Safe);
+                      Carp IPC::Open3 warnings Safe);
     push @expected, 'Exporter' if grep /^Exporter$/, @mods;
     # many old versions of these modules loaded the Exporter:
     is( @mods, @expected,    'Found all modules used' );

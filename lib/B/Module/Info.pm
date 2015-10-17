@@ -1,11 +1,14 @@
 package B::Module::Info;
 
+use 5.006;
+use strict;
 our $VERSION = '0.35_05';
 
 use B;
 use B::Utils 0.27 qw(walkoptree_filtered walkoptree_simple
                      opgrep all_roots);
 @B::Utils::bad_stashes = qw();  # give us everything.
+our ($Start, $End, $File, $CurCV);
 
 =head1 NAME
 
@@ -194,7 +197,7 @@ sub const_sv {
         $sv = $op->sv;
     }
     # the constant could be in the pad (under useithreads)
-    $sv = padval($op->targ) unless $$sv;
+    $sv = padval($op->targ) unless ref($sv) && $$sv;
     return $sv;
 }
 

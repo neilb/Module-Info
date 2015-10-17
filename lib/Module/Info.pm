@@ -2,13 +2,16 @@ package Module::Info;
 
 use 5.006;
 use strict;
+use warnings;
 use Carp;
 use File::Spec;
 use Config;
 
 my $has_version_pm = eval 'use version; 1';
 
-use vars qw($VERSION @ISA $AUTOLOAD);
+our $AUTOLOAD;
+our $VERSION;
+
 $VERSION = eval 'use version; 1' ? 'version'->new('0.35_05') : '0.35_05';
 $VERSION = eval $VERSION;
 

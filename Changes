@@ -1,5 +1,8 @@
 Revision history for perl module Module::Info
 
+0.35_06 2015-10-17 NEILB
+    - Added "use strict" to both modules
+
 0.35_05 2015-10-16 NEILB
     - Had a single failure reported by CPAN Testers for Perl 5.22/Windows.
       On Windows, if you "use Cwd" and then call cwd(), then it does an
