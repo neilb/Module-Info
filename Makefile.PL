@@ -47,6 +47,7 @@ WriteMakefile(
     EXE_FILES       => [qw(bin/pfunc bin/module_info)],
     PL_FILES        => {}, # skip Build.PL
     ($mmv >= 6.31 ? (LICENSE => 'perl') : ()),
+    ($mmv >= 6.48 ? (MIN_PERL_VERSION => '5.006') : ()),
     ( $] >= 5.005 ?
       ( AUTHOR          => 'Mattia Barbon <mbarbon@cpan.org>' ) :
       () ),

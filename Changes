@@ -3,6 +3,7 @@ Revision history for perl module Module::Info
 0.35_06 2015-10-17 NEILB
     - Added "use strict" to both modules
     - Made the pod coverage test a release test RT#90599
+    - Added MIN_PERL_VERSION to Makefile.PL
 
 0.35_05 2015-10-16 NEILB
     - Had a single failure reported by CPAN Testers for Perl 5.22/Windows.
