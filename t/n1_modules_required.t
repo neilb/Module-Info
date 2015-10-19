@@ -11,6 +11,7 @@ SKIP: {
     skip "Only works on 5.6.1 and up.", 3 unless $] >= 5.006001;
 
     my %mods = $bar->modules_required;
+    delete $mods{Win32} if $^O eq 'MSWin32';
     is_deeply( [ sort keys %mods ], [ sort qw(Cwd strict Carp) ],
                "Got the correct modules" );
 

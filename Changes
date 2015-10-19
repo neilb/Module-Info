@@ -1,5 +1,9 @@
 Revision history for perl module Module::Info
 
+0.35_07 2015-10-19 NEILB
+    - I had missed another instance of "the Windows cwd() issue" affecting
+      t/n1_modules_required.t
+
 0.35_06 2015-10-17 NEILB
     - Added "use strict" to both modules
     - Made the pod coverage test a release test RT#90599
