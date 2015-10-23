@@ -1,5 +1,10 @@
 Revision history for perl module Module::Info
 
+0.36 2015-10-23 NEILB
+    - Dropped our own fork of B::Utils, now rely on CPAN one - RT#13524
+    - Now works on recent versions of Perl - RT#97105
+    - Pod tests not run on installation - RT#90599
+
 0.35_07 2015-10-19 NEILB
     - I had missed another instance of "the Windows cwd() issue" affecting
       t/n1_modules_required.t
