@@ -1,5 +1,13 @@
 Revision history for perl module Module::Info
 
+0.37 2015-11-01 NEILB
+    - Added a has_pod() method, which returns the path to the file
+      containing the pod (it could be a .pod file), if there is one.
+      Thanks to YANICK for this.
+    - Listed NEILB as the current maintainer in the AUTHOR section.
+      Thanks again to YANICK.
+    - Added link to github repo to doc.
+
 0.36 2015-10-23 NEILB
     - Dropped our own fork of B::Utils, now rely on CPAN one - RT#13524
     - Now works on recent versions of Perl - RT#97105

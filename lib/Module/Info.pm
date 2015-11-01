@@ -12,7 +12,7 @@ my $has_version_pm = eval 'use version; 1';
 our $AUTOLOAD;
 our $VERSION;
 
-$VERSION = eval 'use version; 1' ? 'version'->new('0.36') : '0.36';
+$VERSION = eval 'use version; 1' ? 'version'->new('0.37') : '0.37';
 $VERSION = eval $VERSION;
 
 
@@ -756,6 +756,10 @@ sub use_version {
 }
 
 =back
+
+=head1 REPOSITORY
+
+L<https://github.com/neilb/Module-Info>
 
 =head1 AUTHOR
 
