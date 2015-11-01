@@ -321,6 +321,42 @@ sub is_core {
                             $Config{privlib});
 }
 
+=item B<has_pod>
+
+    my $has_pod = $module->has_pod;
+
+Returns the location of the module's pod, which can be the module file itself, 
+if the POD is inlined, the associated POD file, or nothing if there is no POD 
+at all.
+
+=cut
+
+sub has_pod {
+    my $self = shift; 
+
+    my $filename = $self->file;
+    
+    open my $file, $filename or return; # the file won't even open 
+    
+    while( <$file> ) { 
+        return $filename if /^=[a-z]/; 
+    } 
+
+    # nothing found? Try a companion POD file
+
+    $filename =~ s/\.[^.]+$/.pod/ or return;
+
+    return unless -f $filename;
+
+    open $file, $filename or return;
+    
+    while( <$file> ) { 
+        return $filename if /^=[a-z]/; 
+    } 
+    
+    return;
+}
+
 =back
 
 =head2 Information that requires loading.

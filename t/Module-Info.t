@@ -27,6 +27,7 @@ my @expected_subs = qw(
                        inc_dir            
                        file               
                        is_core            
+                       has_pod
                        packages_inside    
                        package_versions
                        modules_required
