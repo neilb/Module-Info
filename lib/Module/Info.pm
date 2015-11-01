@@ -726,6 +726,9 @@ sub use_version {
 Michael G Schwern <schwern@pobox.com> with code from ExtUtils::MM_Unix,
 Module::InstalledVersion and lots of cargo-culting from B::Deparse.
 
+Mattia Barbon <mbarbon@cpan.org> maintained
+the module from 2002 to 2013.
+
 Neil Bowers <neilb@cpan.org> is the current maintainer.
 
 =head1 LICENSE
