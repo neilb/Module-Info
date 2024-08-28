@@ -12,7 +12,7 @@ my $has_version_pm = eval 'use version; 1';
 our $AUTOLOAD;
 our $VERSION;
 
-$VERSION = eval 'use version; 1' ? 'version'->new('0.37') : '0.37';
+$VERSION = eval 'use version; 1' ? 'version'->new('0.38') : '0.38';
 $VERSION = eval $VERSION;
 
 

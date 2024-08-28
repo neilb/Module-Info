@@ -3,8 +3,9 @@ use warnings;
 
 use Test::More tests => 3;
 
-use lib 't/lib';
+use lib './t/lib';
 
+use lib '.';
 use Module::Info;
 
 like( Module::Info->new_from_module('Moo')->has_pod => qr/Moo\.pm$/, "inlined POD" );
