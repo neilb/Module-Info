@@ -1,5 +1,8 @@
 Revision history for perl module Module::Info
 
+0.39 2024-08-28 NEILB
+    - Fixed RT#129677 with patch from HAARG++.
+
 0.38 2024-08-28 NEILB
     - Get rid of ' as package namespace separator
 
