@@ -204,8 +204,8 @@ SKIP: {
     my @mods = $module->modules_used;
     is( @mods, 8,           'modules_used' );
     is_deeply( [sort @mods],
-               [sort qw(strict vars Carp Exporter t/lib/Bar.pm t/lib/NotHere.pm
-                        t/lib/Foo.pm lib)] );
+               [sort qw(strict vars Carp Exporter ./t/lib/Bar.pm ./t/lib/NotHere.pm
+                        ./t/lib/Foo.pm lib)] );
 
     $module->name('Foo');
     my @isa = $module->superclasses;

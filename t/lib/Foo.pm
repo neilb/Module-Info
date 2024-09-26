@@ -2,7 +2,7 @@ package Foo;
 
 use strict;
 require Exporter;
-require "t/lib/Foo.pm";
+require "./t/lib/Foo.pm";
 use vars qw(@ISA $VERSION);
 $VERSION = 7.254;
 
@@ -56,13 +56,13 @@ sub croak {
 
     return sub {
         main::wibble('call insde anon sub inside sub');
-        require 't/lib/NotHere.pm';
+        require './t/lib/NotHere.pm';
     }
 }
 
 BEGIN {
-    require 't/lib/Bar.pm';
+    require './t/lib/Bar.pm';
 }
 
-my $mod = 't/lib/Bar.pm';
+my $mod = './t/lib/Bar.pm';
 require $mod;
